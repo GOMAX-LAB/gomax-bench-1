@@ -1,0 +1,47 @@
+schema_version = "1.4"
+artifacts = [ "/app/output",]
+
+[task]
+name = "local/Electrochemical-bioremediation-01"
+version = "1.0.0"
+description = ""
+authors = []
+keywords = []
+
+[metadata]
+runtime_policy = "agent-default"
+judge_agent_source = "run"
+difficulty = "unknown"
+scoring_mode = "rubric"
+scoring_aggregation = "weighted_mean"
+rubric_items = 36
+rubric_total_weight = 100.0
+required_items = 0
+source_package = "电化学生物修复 宏基因组候选基因分析 Benchmark"
+output_directory = "/app/output"
+
+[verifier]
+timeout_sec = 3600.0
+collect = []
+
+[verifier.env]
+
+[agent]
+timeout_sec = 10800.0
+
+[environment]
+network_mode = "public"
+build_timeout_sec = 600.0
+docker_image = "harbor-runtime-base:current"
+os = "linux"
+cpus = 2
+memory_mb = 8192
+storage_mb = 10240
+mcp_servers = []
+workdir = "/app"
+upload_source = "input_files"
+upload_target = "/app/input_files"
+
+[environment.env]
+
+[solution.env]
